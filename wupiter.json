@@ -1,0 +1,19 @@
+{
+  "name": "Hello World",
+  "description": "Sample code generator",
+  "tags": [ "html" ],
+  "params": [
+    {
+      "name": "name",
+      "type": "text",
+      "description": "Enter your name",
+      "defaultValue": "World",
+      "required": true
+    }
+  ],
+  "files": [
+    {
+      "filePath": "hello.html"
+    }
+  ]
+}

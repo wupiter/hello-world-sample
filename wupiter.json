@@ -15,7 +15,7 @@
       "type": "radios",
       "description": "Are you pretty?",
       "defaultValue": "Yes",
-      "values": [ "Yes", "No" ]
+      "values": [ "Yes", "No" ],
       "required": false
     }
   ],

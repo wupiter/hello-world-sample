@@ -9,6 +9,14 @@
       "description": "Enter your name",
       "defaultValue": "World",
       "required": true
+    },
+    {
+      "name": "Pretty",
+      "type": "radios",
+      "description": "Are you pretty?",
+      "defaultValue": "Yes",
+      "values: [ "Yes", "No" ]
+      "required": false
     }
   ],
   "files": [

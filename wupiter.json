@@ -13,7 +13,8 @@
   ],
   "files": [
     {
-      "filePath": "hello.html"
+      "filePath": "hello.html",
+      "static": false
     }
   ]
 }

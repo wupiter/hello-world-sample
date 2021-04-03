@@ -13,7 +13,7 @@
     {
       "name": "Pretty",
       "type": "radios",
-      "description": "Are you pretty?",
+      "label": "Are you pretty?",
       "defaultValue": "Yes",
       "values": [ "Yes", "No" ],
       "required": false

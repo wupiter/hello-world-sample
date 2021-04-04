@@ -25,9 +25,9 @@
       "required": false,
       "allowMultiple": false,
       "values": [
-        { "name": "Canada", "key": "CA" },
-        { "name": "Ireland", "key": "IE" },
-        { "name": "United States of America", "key": "US" }
+        { "label": "Canada", "key": "CA" },
+        { "label": "Ireland", "key": "IE" },
+        { "label": "United States of America", "key": "US" }
       ]
     },
     {
@@ -40,17 +40,17 @@
         {
           "groupLabel": "Canada",
           "values": [
-            { "name": "Toronto" },
-            { "name": "Ottawa" },
-            { "name": "Montreal" }
+            { "label": "Toronto" },
+            { "label": "Ottawa" },
+            { "label": "Montreal" }
           ]
         },
         {
           "groupLabel": "US",
           "values": [
-            { "name": "New York" },
-            { "name": "Washington DC" },
-            { "name": "Philadelphia" }
+            { "label": "New York" },
+            { "label": "Washington DC" },
+            { "label": "Philadelphia" }
           ]
         }
       ]

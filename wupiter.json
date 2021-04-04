@@ -18,7 +18,7 @@
       "required": true
     },
     {
-      "name": "Cool",
+      "name": "cool",
       "type": "radios",
       "label": "Are you cool?",
       "defaultValue": "Yes",
@@ -67,6 +67,10 @@
     {
       "filePath": "hello.html",
       "static": false
+    },
+    {
+      "filePath": "cool.txt",
+      "condition": "cool == 'Yes'"
     }
   ]
 }

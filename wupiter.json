@@ -11,6 +11,13 @@
       "required": true
     },
     {
+      "name": "checked",
+      "type": "checkbox",
+      "description": "Check me",
+      "defaultValue": true,
+      "required": true
+    },
+    {
       "name": "Cool",
       "type": "radios",
       "label": "Are you cool?",

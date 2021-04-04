@@ -11,12 +11,49 @@
       "required": true
     },
     {
-      "name": "Pretty",
+      "name": "Cool",
       "type": "radios",
-      "label": "Are you pretty?",
+      "label": "Are you cool?",
       "defaultValue": "Yes",
       "values": [ "Yes", { "name": "No", "value": "no" } ],
       "required": false
+    },
+    {
+      "name": "birthPlace",
+      "type": "searchbox",
+      "label": "Where were you born?",
+      "required": false,
+      "allowMultiple": false,
+      "values": [
+        { "name": "Canada", key: "CA" },
+        { "name": "Ireland", key: "IE" },
+        { "name": "United States of America", key: "US" },
+      ]
+    },
+    {
+      "name": "cities",
+      "type": "searchbox",
+      "label": "Favourite cities?",
+      "required": false,
+      "allowMultiple": true,
+      "values": [
+        {
+          "groupLabel": "Canada",
+          "values": [
+            { "name": "Toronto" },
+            { "name": "Ottawa" },
+            { "name": "Montreal" },
+          ]
+        },
+        {
+          "groupLabel": "US",
+          "values": [
+            { "name": "New York" },
+            { "name": "Washington DC" },
+            { "name": "Philadelphia" },
+          ]
+        },
+      ]
     }
   ],
   "files": [

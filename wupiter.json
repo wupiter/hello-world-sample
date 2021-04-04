@@ -27,7 +27,7 @@
       "values": [
         { "name": "Canada", "key": "CA" },
         { "name": "Ireland", "key": "IE" },
-        { "name": "United States of America", "key": "US" },
+        { "name": "United States of America", "key": "US" }
       ]
     },
     {
@@ -42,7 +42,7 @@
           "values": [
             { "name": "Toronto" },
             { "name": "Ottawa" },
-            { "name": "Montreal" },
+            { "name": "Montreal" }
           ]
         },
         {
@@ -50,7 +50,7 @@
           "values": [
             { "name": "New York" },
             { "name": "Washington DC" },
-            { "name": "Philadelphia" },
+            { "name": "Philadelphia" }
           ]
         },
       ]

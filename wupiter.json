@@ -22,7 +22,7 @@
       "type": "radios",
       "label": "Are you cool?",
       "defaultValue": "Yes",
-      "values": [ "Yes", { "name": "No", "value": "no" } ],
+      "values": [ "Yes", { "label": "No", "key": "no" } ],
       "required": false
     },
     {

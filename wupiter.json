@@ -26,6 +26,15 @@
       "required": false
     },
     {
+      "name": "color",
+      "type": "select",
+      "defaultValue": "white",
+      "values": [
+        { "key": "blue", "label": "Blue"},
+        "white"
+      ]
+    },
+    {
       "name": "birthPlace",
       "type": "searchbox",
       "label": "Where were you born?",

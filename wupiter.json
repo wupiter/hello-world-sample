@@ -63,14 +63,21 @@
       ]
     }
   ],
-  "files": [
-    {
-      "filePath": "hello.html",
+  "preProcessing": {
+    "pathReplacements": [
+      { "target":  "hello.html", "replacement":  "htmls/{{CamelCase name}}.html"},
+      { "target":  "cool.txt", "replacement":  "{{strReplace cool 'Yes' 'Ya'}}"}
+    ],
+    "textReplacements": [
+      { "target":  "Hello", "replacement":  "Hi"}
+    ]
+  },
+  "files": {
+    "hello.html": {
       "static": false
     },
-    {
-      "filePath": "cool.txt",
+    "cool.txt": {
       "condition": "cool == 'Yes'"
     }
-  ]
+  }
 }

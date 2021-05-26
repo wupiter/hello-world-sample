@@ -91,6 +91,25 @@ Sample:
     }
 ```
 
+### Select param
+These params have a `select` type and are displayed as a select form element.
+
+Supported fields:
+- defaultValue (optional): The option item with this value will be selected
+- values (required): Array of strings (ie: `[ "Yes", "No" ]`) or objects (ie: `[ { "label": "Yes", "key": "yes" }, { "label": "No", "key": "no" } ]`, where `label` is the displayed label and `key` is the value set to the param, if the user selects the option item)
+
+Sample:
+```
+    {
+      "name": "color",
+      "type": "select",
+      "label": "Choose a color",
+      "defaultValue": "Red",
+      "values": [ "Red", { "label": "Blue", "key": "blue" }, "Green" ],
+      "required": false
+    }
+```
+
 ### Searchbox param
 These params have a `searchbox` type and are displayed as a searchable dropdown with selected values displayed as tags.
 
@@ -144,6 +163,35 @@ Sample with groupped values:
 ```
 *In the searchbox dropdown there'll be an item for the group and for each value within the group. When user selects a group in the UI, all its values will be selected.*
 
+## PreProcessing
+This field allows configuring string replacement operations on both file paths and file contents before the template files are processed (see next section).
+
+Sample:
+```
+  "preProcessing": {
+    "pathReplacements": [
+      { "target":  "demo-api", "replacement":  "{{appName}}"}
+    ],
+    "textReplacements": [
+      { "target":  "demo-api", "replacement":  "{{appName}}"},
+      { "target":  "#!#", "replacement":  ""},
+      { "target":  "<!--#", "replacement":  ""},
+      { "target":  "#-->", "replacement":  ""},
+      { "target":  "//#", "replacement":  ""}
+    ]
+  },
+```
+
+In above example
+- `demo-api` will be replaced in both file paths and file content with the value of the `appName` param
+- comments like `#!#{{appName}}` (ie: in YAML files) will be replaced with `{{appName}}
+- comments like `<!--#{{appName}}#-->` (ie: in XML files) will be replaced with `{{appName}}
+- comments like `//#{{appName}}` (ie: in XML files) will be replaced with `{{appName}}`
+
+Using comments in the code that will later be turned to actual code can be useful to hide a logic that could otherwise make the code not compile or fail to parse.
+
+By default, Wupiter also replaces `//{{`, `#{{` and `<!--{{` to `{{` and `}}-->` to `}}` in all files (aka text replacements), so we can embed template logic in files without breaking compilation or parsing. So no need to include those text replacements.
+
 ## Template files
 The files defined in the `wupiter.json` file under the `files` field will be included in the output zip file created by the code generator. 
 
@@ -166,13 +214,11 @@ Supported fields for files:
 
 Sample `files` section within `wupiter.json`:
 ```
-  "files": [
-    {
-      "filePath": "hello.html",
+  "files": {
+    "hello.html": {
       "static": false
     },
-    {
-      "filePath": "cool.txt",
+    "cool.txt": {
       "condition": "cool == 'Yes'"
     }
   ]
@@ -180,4 +226,55 @@ Sample `files` section within `wupiter.json`:
 
 ### Conditions
 Conditions must follow the `<value1> <operator> <value2>` format, where `value1` and `value2` are param values or constants and `operator` can have one of the following values: `==`, `!=`, `<`, `>`, `<=`, `>=`, `&&`, or `||`.
+
+### Supported Handlebar helpers
+
+#### capitalize
+Changes the first letter to upper case of input string.
+
+Sample:
+```
+{{capitalize name}}
+```
+
+If `name=john`, it will output `John`.
+
+#### CamelCase
+Applies CamelCase format on input string:
+- it will change the first letter to upper case
+- it will change the next letter after a whitspace to upper case and remove the whitespace
+
+Sample:
+```
+{{CamelCase appName}}
+```
+
+If `appName=todo api`, it will output `TodoApi`.
+
+#### strReplace
+Replaces all occurences of a pattern in a string with another string.
+
+Sample:
+```
+{{strReplace packageName '.' '/'}}
+```
+
+If `packageName=com.example.app`, it will output `com/example/app`.
+
+#### eval
+It will evaluate an operation on two expressions. Supported operations: ==, !=, <, <=, >=, >, && and ||.
+
+Sample:
+```
+<!--{{#if (eval javaVersion '==' 11)}}-->
+<java.version>11</java.version>
+<!--{{/if}}-->
+<!--{{#if (eval javaVersion '!=' 11)}}-->
+<!--#<java.version>{{javaVersion}}</java.version>#-->
+<!--{{/if}}-->
+```
+
+It will output `<java.version>JAVA_VERSION</java.version>` where `JAVA_VERSION` is the value passed to the `javaVersion` param.
+
+Please, note the `#` before the opening `if` element.
 

@@ -163,8 +163,8 @@ Sample with groupped values:
 ```
 *In the searchbox dropdown there'll be an item for the group and for each value within the group. When user selects a group in the UI, all its values will be selected.*
 
-## PreProcessing
-This field allows configuring string replacement operations on both file paths and file contents before the template files are processed (see next section).
+## Pre-processing
+This field allows configuring string replacement operations on both file paths and file contents before the template files are processed (see next section on templates).
 
 Sample:
 ```

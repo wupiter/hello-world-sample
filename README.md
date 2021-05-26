@@ -184,8 +184,8 @@ Sample:
 
 In above example
 - `demo-api` will be replaced in both file paths and file content with the value of the `appName` param
-- comments like `#!#{{appName}}` (ie: in YAML files) will be replaced with `{{appName}}
-- comments like `<!--#{{appName}}#-->` (ie: in XML files) will be replaced with `{{appName}}
+- comments like `#!#{{appName}}` (ie: in YAML files) will be replaced with `{{appName}}`
+- comments like `<!--#{{appName}}#-->` (ie: in XML files) will be replaced with `{{appName}}`
 - comments like `//#{{appName}}` (ie: in XML files) will be replaced with `{{appName}}`
 
 Using comments in the code that will later be turned to actual code can be useful to hide a logic that could otherwise make the code not compile or fail to parse.

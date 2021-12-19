@@ -86,7 +86,7 @@
       "static": false
     },
     "cool.txt": {
-      "condition": "cool == 'Yes'"
+      "condition": "cool '==' 'Yes'"
     }
   }
 }

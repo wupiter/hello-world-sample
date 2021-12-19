@@ -85,6 +85,9 @@
     "hello.html": {
       "static": false
     },
+    "README.md": {
+      "condition": "false"
+    },
     "cool.txt": {
       "condition": "cool '==' 'Yes'"
     }

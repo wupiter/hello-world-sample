@@ -1,32 +1,30 @@
 {
-  "name": "Hello World",
-  "description": "Sample code generator",
-  "tags": [ "html" ],
-  "params": [
-    {
-      "name": "name",
+  "info": {
+    "name": "Hello World",
+    "description": "Sample code generator",
+    "tags": [ "html" ]
+  },
+  "params": {
+    "name": {
       "type": "text",
       "description": "Enter your name",
       "defaultValue": "World",
       "required": true
     },
-    {
-      "name": "checked",
+    "checked": {
       "type": "checkbox",
       "description": "Check me",
       "defaultValue": true,
       "required": true
     },
-    {
-      "name": "cool",
+    "cool": {
       "type": "radios",
       "label": "Are you cool?",
       "defaultValue": "Yes",
       "values": [ "Yes", { "label": "No", "key": "no" } ],
       "required": false
     },
-    {
-      "name": "color",
+    "color": {
       "type": "select",
       "defaultValue": "white",
       "values": [
@@ -34,8 +32,7 @@
         "white"
       ]
     },
-    {
-      "name": "birthPlace",
+    "birthPlace": {
       "type": "searchbox",
       "label": "Where were you born?",
       "required": false,
@@ -46,8 +43,7 @@
         { "label": "United States of America", "key": "US" }
       ]
     },
-    {
-      "name": "cities",
+    "cities": {
       "type": "searchbox",
       "label": "Favourite cities?",
       "required": false,
@@ -71,7 +67,7 @@
         }
       ]
     }
-  ],
+  },
   "preProcessing": {
     "pathReplacements": [
       { "target":  "hello.html", "replacement":  "htmls/{{CamelCase name}}.html"},
